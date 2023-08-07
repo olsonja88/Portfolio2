@@ -2,21 +2,17 @@ package com.olsonja.portfolio2.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-import java.util.ArrayList;
-
 @Entity
-public class Category {
+public class Project {
 
-    // Instance variables
+    // Instance Variables
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Post> posts = new ArrayList<>();
+    private String description;
+    private String link;
 
 
     // Getters
@@ -28,8 +24,12 @@ public class Category {
         return name;
     }
 
-    public List<Post> getPosts() {
-        return posts;
+    public String getDescription() {
+        return description;
+    }
+
+    public String getLink() {
+        return link;
     }
 
 
@@ -38,8 +38,12 @@ public class Category {
         this.name = name;
     }
 
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
 }
