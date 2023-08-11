@@ -19,6 +19,12 @@ public class Category {
     private List<Post> posts = new ArrayList<>();
 
 
+    // Constructor
+    public Category(String name) {
+        this.name = name;
+    }
+
+
     // Getters
     public Long getId() {
         return id;

@@ -1,5 +1,7 @@
 package com.olsonja.portfolio2.service;
 
+import com.olsonja.portfolio2.repository.CategoryRepository;
+import com.olsonja.portfolio2.model.Category;
 import com.olsonja.portfolio2.repository.PostRepository;
 import com.olsonja.portfolio2.model.Post;
 
@@ -36,7 +38,11 @@ public class PostServiceImpl implements PostService {
 
 
     // Create
-    public Post createPost(Post post) {
+    public Post createPost(Post post, Category category) {
+        // Set new post to the desired category
+        post.setCategory(category);
+
+        // Save new post
         return postRepository.save(post);
     }
 

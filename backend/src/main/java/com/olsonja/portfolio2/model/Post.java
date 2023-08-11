@@ -18,6 +18,14 @@ public class Post {
     private Category category;
 
 
+    // Constructor
+    public Post(String name, String content, Category category) {
+        this.name = name;
+        this.content = content;
+        this.category = category;
+    }
+
+
     // Getters
     public Long getId() {
         return id;
@@ -29,6 +37,10 @@ public class Post {
 
     public String getContent() {
         return content;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
 
@@ -43,6 +55,10 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
 }

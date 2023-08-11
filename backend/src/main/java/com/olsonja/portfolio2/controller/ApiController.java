@@ -71,8 +71,8 @@ public class ApiController {
     }
 
     @PostMapping("/posts")
-    public Post createPost(@RequestBody Post post) {
-        return postService.createPost(post);
+    public Post createPost(@RequestBody Post post, Category category) {
+        return postService.createPost(post, category);
     }
 
     @PutMapping("/posts/{id}")

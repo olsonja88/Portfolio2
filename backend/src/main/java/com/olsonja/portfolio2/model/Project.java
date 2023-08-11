@@ -15,6 +15,13 @@ public class Project {
     private String link;
 
 
+    // Constructor
+    public Project(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+
     // Getters
     public Long getId() {
         return id;

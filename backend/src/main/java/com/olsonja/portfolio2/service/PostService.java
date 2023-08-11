@@ -1,6 +1,7 @@
 package com.olsonja.portfolio2.service;
 
 import com.olsonja.portfolio2.model.Post;
+import com.olsonja.portfolio2.model.Category;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public interface PostService {
     Post getPostById(Long id);
 
     // Create
-    Post createPost(Post post);
+    Post createPost(Post post, Category category);
 
     // Update
     void updatePost(Post post);
