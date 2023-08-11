@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Portfolio2Application {
 
     public static void main(String[] args) {
+
+        // Run application
         SpringApplication.run(Portfolio2Application.class, args);
     }
 
