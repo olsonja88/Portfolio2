@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/App.css';
+import './css/Custom.css';
+
+import Home from './components/Home';
 
 function App() {
   return (
-   <div>
-
-   </div>
+      <Home/>
   );
 }
 

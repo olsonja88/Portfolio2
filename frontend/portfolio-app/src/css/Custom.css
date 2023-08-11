@@ -1,0 +1,65 @@
+/* Custom CSS for entire project */
+
+
+/* WHOLE PAGE */
+
+body {
+    background-color: #3a3a3a;
+}
+
+
+/* BUTTONS */
+
+.btn {
+    background-color: #3a3a3a;
+    border: none;
+}
+
+.btn:hover {
+    background-color: black;
+}
+
+
+/* PAGE HEADER */
+
+.site-title {
+    background-color: ghostwhite;
+    text-align: center;
+    padding: 50px;
+}
+
+
+/* NAVBAR & OFF-CANVAS */
+
+.navbar {
+    background-color: grey;
+    padding: 10px;
+}
+
+.navbar-brand {
+    font-size: 2em;
+}
+
+.nav-item {
+    margin-right: 5px;
+}
+
+.nav-link {
+    color: black;
+    font-size: 1.5em;
+    padding: 20px;
+}
+
+.offcanvas {
+    background-color: ghostwhite;
+}
+
+
+/* ABOUT SECTION */
+
+.about-section {
+    background-color: ghostwhite;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 50px;
+}
