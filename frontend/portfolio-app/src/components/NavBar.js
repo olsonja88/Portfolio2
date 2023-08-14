@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useState } from 'react';
-import { Container, Navbar, Button, Offcanvas } from 'react-bootstrap';
+import { Container, Navbar, Nav, Button, Offcanvas, Form } from 'react-bootstrap';
 
 const NavBar = () => {
 
@@ -22,7 +22,16 @@ const NavBar = () => {
                         <Offcanvas.Title>Navigation</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <p>Content</p>
+                        <Nav.Link>Home</Nav.Link>
+                        <Nav.Link>Portfolio</Nav.Link>
+                        <Nav.Link>Blog</Nav.Link>
+                        <Form className="mt-3">
+                            <Form.Group controlId="basicSearch">
+                                <Form.Label>Search</Form.Label>
+                                <Form.Control type="search" placeholder="Search..." />
+                            </Form.Group>
+                            <Button type="submit" className="mt-2">Search</Button>
+                        </Form>
                     </Offcanvas.Body>
                 </Offcanvas>
             </Container>

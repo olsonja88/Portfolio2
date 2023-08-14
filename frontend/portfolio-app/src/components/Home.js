@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import PageHeader from './PageHeader';
 import NavBar from './NavBar';
 import AboutSection from './AboutSection';
+import Footer from './Footer';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <PageHeader/>
             <NavBar/>
             <AboutSection/>
+            <Footer/>
         </Container>
     );
 }
