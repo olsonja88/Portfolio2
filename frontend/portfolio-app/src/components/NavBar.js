@@ -22,9 +22,9 @@ const NavBar = () => {
                         <Offcanvas.Title>Navigation</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <Nav.Link>Home</Nav.Link>
-                        <Nav.Link>Portfolio</Nav.Link>
-                        <Nav.Link>Blog</Nav.Link>
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/portfolio">Portfolio</Nav.Link>
+                        <Nav.Link href="/blog">Blog</Nav.Link>
                         <Form className="mt-3">
                             <Form.Group controlId="basicSearch">
                                 <Form.Label>Search</Form.Label>
