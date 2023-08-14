@@ -17,7 +17,7 @@ const AboutSection = () => {
                     <Accordion>
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>
-                                Relevant Completed Classes
+                                Relevant Completed Courses
                             </Accordion.Header>
                             <Accordion.Body>
                                 <ListGroup as="ul">

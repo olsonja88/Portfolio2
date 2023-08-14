@@ -25,13 +25,6 @@ const NavBar = () => {
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/portfolio">Portfolio</Nav.Link>
                         <Nav.Link href="/blog">Blog</Nav.Link>
-                        <Form className="mt-3">
-                            <Form.Group controlId="basicSearch">
-                                <Form.Label>Search</Form.Label>
-                                <Form.Control type="search" placeholder="Search..." />
-                            </Form.Group>
-                            <Button type="submit" className="mt-2">Search</Button>
-                        </Form>
                     </Offcanvas.Body>
                 </Offcanvas>
             </Container>

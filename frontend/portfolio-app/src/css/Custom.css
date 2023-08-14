@@ -50,6 +50,12 @@ body {
     padding: 20px;
 }
 
+.nav-link:hover {
+    background-color: grey;
+    color: ghostwhite;
+    border-radius: 5px 5px;
+}
+
 .offcanvas {
     background-color: ghostwhite;
 }
