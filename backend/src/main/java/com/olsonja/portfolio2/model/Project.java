@@ -15,10 +15,16 @@ public class Project {
     private String link;
 
 
-    // Constructor
+    // Constructors
     public Project(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public Project(String name, String description, String link) {
+        this.name = name;
+        this.description = description;
+        this.link = link;
     }
 
 
