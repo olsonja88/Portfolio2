@@ -16,7 +16,7 @@ public class Project {
 
 
     // Constructors
-    public Project(String name, String description) {
+    public Project() {
         this.name = name;
         this.description = description;
     }

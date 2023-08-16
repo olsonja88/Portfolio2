@@ -19,7 +19,11 @@ public class Category {
     private List<Post> posts = new ArrayList<>();
 
 
-    // Constructor
+    // Constructors
+    public Category() {
+        this.name = name;
+    }
+
     public Category(String name) {
         this.name = name;
     }

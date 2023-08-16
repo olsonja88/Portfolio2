@@ -18,7 +18,12 @@ public class Post {
     private Category category;
 
 
-    // Constructor
+    // Constructors
+    public Post() {
+        this.name = name;
+        this.content = content;
+    }
+
     public Post(String name, String content, Category category) {
         this.name = name;
         this.content = content;

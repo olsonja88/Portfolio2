@@ -25,6 +25,7 @@ const NavBar = () => {
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/portfolio">Portfolio</Nav.Link>
                         <Nav.Link href="/blog">Blog</Nav.Link>
+                        <Nav.Link href="/manage">Manage</Nav.Link>
                     </Offcanvas.Body>
                 </Offcanvas>
             </Container>

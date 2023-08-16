@@ -98,7 +98,7 @@ public class ApiController {
         return projectService.getProjectById(id);
     }
 
-    @PostMapping("/projects")
+    @PostMapping("/project")
     public Project createProject(@RequestBody Project project) {
         return projectService.createProject(project);
     }

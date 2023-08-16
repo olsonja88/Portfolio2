@@ -6,7 +6,7 @@ import java.util.Arrays;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class DataSeeder implements CommandLineRunner {
 
     private final ProjectRepository projectRepository;
@@ -23,7 +23,11 @@ public class DataSeeder implements CommandLineRunner {
             Project project3 = new Project("Discovery", "A Game Dev Project", "https://github.com/olsonja88/Discovery.git");
 
             projectRepository.saveAll(Arrays.asList(project1, project2, project3));
+
+            projectRepository.findAll().forEach(System.out::println);
         }
+
+        projectRepository.findAll().forEach(System.out::println);
     }
 
 }

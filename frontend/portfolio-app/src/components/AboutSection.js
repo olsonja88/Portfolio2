@@ -6,7 +6,7 @@ import ProfilePic from "../assets/NewProfilePic2.jpg";
 
 const AboutSection = () => {
     return (
-        <Container fluid className="about-section">
+        <Container fluid className="content-section">
             <Row>
                 <Col></Col>
                 <Col>
