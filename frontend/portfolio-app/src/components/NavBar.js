@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useState } from 'react';
-import { Container, Navbar, Nav, Button, Offcanvas, Form } from 'react-bootstrap';
+import { Container, Navbar, Nav, Button, Offcanvas } from 'react-bootstrap';
 
 const NavBar = () => {
 

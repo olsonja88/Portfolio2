@@ -1,6 +1,5 @@
 // Form to create a new project in the database
 
-import { useState, useEffect } from 'react';
 import { Container, Button, Form } from 'react-bootstrap';
 import PageHeader from '../components/PageHeader';
 import NavBar from '../components/NavBar';
