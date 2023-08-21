@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/portfolio-app/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "frontend/portfolio-app/build" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/frontend/api/projects/(.*)",
+      "dest": "/frontend/api/projects.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/portfolio-app/build/$1"
+    }
+  ]
+}
