@@ -12,7 +12,7 @@ const ProjectList = () => {
 
         setLoading(true);
 
-        fetch('/api/projects')
+        fetch('../../api/projects')
             .then(response => response.json())
             .then(data => {
                 setProjects(data);
@@ -22,6 +22,17 @@ const ProjectList = () => {
                 console.error("Error fetching data: ", error);
             })
     }, []);
+
+    const projectList = projects.map(project => {
+        return <div key={project.id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <Card>
+                <Card.Body>
+                    <Card.Title>{project.name}</Card.Title>
+                    <Card.Text>{project.description}</Card.Text>
+                </Card.Body>
+            </Card>
+        </div>
+    });
 
     if (loading) {
         return (
@@ -33,16 +44,7 @@ const ProjectList = () => {
         <Container className="content-section">
             <h1>Project List</h1>
             <Row>
-                {projects.map(project => (
-                    <div key={project.id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <Card>
-                            <Card.Body>
-                                <Card.Title>{project.name}</Card.Title>
-                                <Card.Text>{project.description}</Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                ))}
+                {projectList}
             </Row>
         </Container>
     );
