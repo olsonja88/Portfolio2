@@ -11,9 +11,9 @@ module.exports = async (req, res) => {
         let response;
 
         if (req.method === 'GET') {
-            response = await fetch(`${backendUrl}${apiEndpoint}`);
+            response = await fetch(`${apiEndpoint}`);
         } else if (req.method === 'POST' || req.method === 'PUT' || req.method === 'DELETE') {
-            response = await fetch(`${backendUrl}${apiEndpoint}`, {
+            response = await fetch(`$${apiEndpoint}`, {
                 method: req.method,
                 headers: req.headers,
                 body: req.method !== 'GET' ? req.body: undefined
