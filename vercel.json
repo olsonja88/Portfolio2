@@ -2,9 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "frontend/portfolio-app/package.json",
+      "src": "/frontend/portfolio-app/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "frontend/portfolio-app/build" }
+      "config": { "distDir": "/frontend/portfolio-app/build" }
     }
   ],
   "routes": [
