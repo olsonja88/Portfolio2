@@ -5,7 +5,6 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 const ManagerMenu = () => {
     return (
       <Container fluid className="content-section">
-        <h2>Management Options</h2>
         <Row className="mt-4">
             <Col>
                 <h3>Projects</h3>
