@@ -2,18 +2,22 @@
 
 module.exports = async (req, res) => {
 
-    const backendUrl = "https://portfolio2-git-main-olsonja88.vercel.app/api/";
+    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio2-delta-ten.vercel.app/');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    const apiEndpoint = `/projects${req.url}`;
+    const backendUrl = 'https://portfolio2-delta-ten.vercel.app/api';
+
+    const apiEndpoint = `${backendUrl}${req.url.startsWith('/') ? '' : '/'}${req.url}`;
 
     try {
 
         let response;
 
         if (req.method === 'GET') {
-            response = await fetch(`${backendUrl}${apiEndpoint}`);
+            response = await fetch(`${apiEndpoint}`);
         } else if (req.method === 'POST' || req.method === 'PUT' || req.method === 'DELETE') {
-            response = await fetch(`${backendUrl}${apiEndpoint}`, {
+            response = await fetch(`${apiEndpoint}`, {
                 method: req.method,
                 headers: req.headers,
                 body: req.method !== 'GET' ? req.body: undefined
@@ -27,6 +31,6 @@ module.exports = async (req, res) => {
         res.json(await response.json());
 
     } catch (error) {
-        res.status(500).json({ error: "An error occurred while processing the request." });
+        res.status(500).json({ error: `${error}`});
     }
 };

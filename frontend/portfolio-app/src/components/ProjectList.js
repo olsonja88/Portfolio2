@@ -12,7 +12,7 @@ const ProjectList = () => {
 
         setLoading(true);
 
-        fetch('../../api/projects.js')
+        fetch('/api/projects')
             .then(response => response.json())
             .then(data => {
                 setProjects(data);
