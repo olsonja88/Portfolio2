@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    const backendUrl = '/api';
+    const backendUrl = 'https://frozen-dusk-55881-7ff3d5645692.herokuapp.com/api';
 
     const apiEndpoint = `${backendUrl}${req.url.startsWith('/') ? '' : '/'}${req.url}`;
 
