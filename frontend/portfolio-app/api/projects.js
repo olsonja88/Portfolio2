@@ -2,7 +2,7 @@
 
 module.exports = async (req, res) => {
 
-    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio2-ten-kohl.vercel.app');
+    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio2-ten-kohl.vercel.app', 'https://johnolson.dev');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 

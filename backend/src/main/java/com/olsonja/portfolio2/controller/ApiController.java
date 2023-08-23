@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"https://portfolio2-ten-kohl.vercel.app", "https://johnolson.dev"})
 public class ApiController {
 
     // Instance Variables

@@ -13,7 +13,7 @@ const ProjectList = () => {
 
         setLoading(true);
 
-        fetch('https://frozen-dusk-55881-7ff3d5645692.herokuapp.com/api/projects')
+        fetch('https://johnolson.dev/api/projects')
             .then(response => response.json())
             .then(data => {
                 setProjects(data);
