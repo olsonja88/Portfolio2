@@ -2,7 +2,7 @@
 
 module.exports = async (req, res) => {
 
-    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio2-delta-ten.vercel.app/');
+    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio2-delta-ten.vercel.app');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -15,9 +15,9 @@ module.exports = async (req, res) => {
         let response;
 
         if (req.method === 'GET') {
-            response = await fetch(`${apiEndpoint}`);
+            response = await fetch(apiEndpoint);
         } else if (req.method === 'POST' || req.method === 'PUT' || req.method === 'DELETE') {
-            response = await fetch(`${apiEndpoint}`, {
+            response = await fetch(apiEndpoint, {
                 method: req.method,
                 headers: req.headers,
                 body: req.method !== 'GET' ? req.body: undefined
