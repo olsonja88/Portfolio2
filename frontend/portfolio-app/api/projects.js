@@ -2,9 +2,9 @@
 
 module.exports = async (req, res) => {
 
-    const backendUrl = 'https://portfolio2-delta-ten.vercel.app/api/';
+    const backendUrl = 'https://portfolio2-delta-ten.vercel.app/api';
 
-    const apiEndpoint = `${backendUrl}${req.url}`;
+    const apiEndpoint = `${backendUrl}${req.url.startsWith('/') ? '' : '/'}${req.url}`;
 
     try {
 
