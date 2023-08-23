@@ -7,12 +7,13 @@ const ProjectList = () => {
 
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
 
         setLoading(true);
 
-        fetch('/api/projects')
+        fetch('https://portfolio2-delta-ten.vercel.app/api/projects')
             .then(response => response.json())
             .then(data => {
                 setProjects(data);
@@ -20,6 +21,8 @@ const ProjectList = () => {
                 })
             .catch(error => {
                 console.error("Error fetching data: ", error);
+                setError("An error occurred while fetching data.");
+                setLoading(false);
             })
     }, []);
 
@@ -33,6 +36,10 @@ const ProjectList = () => {
             </Card>
         </div>
     });
+
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
 
     if (loading) {
         return (
