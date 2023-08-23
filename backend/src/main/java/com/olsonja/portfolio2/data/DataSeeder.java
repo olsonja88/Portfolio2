@@ -1,12 +1,14 @@
+// This class is for locally data seeding a remote database for testing purposes
+
 package com.olsonja.portfolio2.data;
 
 import com.olsonja.portfolio2.model.Project;
 import com.olsonja.portfolio2.repository.ProjectRepository;
 import java.util.Arrays;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
 
-@Component
+// @Component
 public class DataSeeder implements CommandLineRunner {
 
     private final ProjectRepository projectRepository;
