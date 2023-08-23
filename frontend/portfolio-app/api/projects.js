@@ -2,11 +2,11 @@
 
 module.exports = async (req, res) => {
 
-    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio2-delta-ten.vercel.app');
+    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio2-ten-kohl.vercel.app');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    const backendUrl = 'https://portfolio2-delta-ten.vercel.app/api';
+    const backendUrl = '/api';
 
     const apiEndpoint = `${backendUrl}${req.url.startsWith('/') ? '' : '/'}${req.url}`;
 

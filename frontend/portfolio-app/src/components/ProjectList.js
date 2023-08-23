@@ -13,7 +13,7 @@ const ProjectList = () => {
 
         setLoading(true);
 
-        fetch('https://portfolio2-delta-ten.vercel.app/api/projects')
+        fetch('/api/projects')
             .then(response => response.json())
             .then(data => {
                 setProjects(data);
