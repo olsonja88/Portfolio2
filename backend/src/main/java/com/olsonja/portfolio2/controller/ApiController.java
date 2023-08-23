@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "https://portfolio2-delta-ten.vercel.app/")
 public class ApiController {
 
     // Instance Variables
