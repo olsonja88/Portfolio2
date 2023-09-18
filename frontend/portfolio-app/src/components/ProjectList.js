@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Container, Row, Col, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { API_BASE_URL } from "../../config";
 
 const ProjectList = () => {
 
@@ -14,7 +15,7 @@ const ProjectList = () => {
 
         setLoading(true);
 
-        fetch('/api/projects')
+        fetch(`${API_BASE_URL}/projects`)
             .then(response => response.json())
             .then(data => {
                 setProjects(data);

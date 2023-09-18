@@ -1,14 +1,14 @@
 // Serverless function file for project endpoints
 
+import { API_BASE_URL } from "../config";
+
 module.exports = async (req, res) => {
 
-    res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio2-ten-kohl.vercel.app', 'https://johnolson.dev');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    const backendUrl = 'http://127.0.0.1:8080/api';
-
-    const apiEndpoint = `${backendUrl}${req.url.startsWith('/') ? '' : '/'}${req.url}`;
+    const apiEndpoint = `${API_BASE_URL}${req.url.startsWith('/') ? '' : '/'}${req.url}`;
 
     try {
 
