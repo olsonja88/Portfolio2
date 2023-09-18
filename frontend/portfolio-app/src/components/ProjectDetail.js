@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Container, Row, Col, Image } from 'react-bootstrap';
+import { API_BASE_URL } from "../config";
 
 const ProjectDetail = () => {
 
@@ -15,7 +16,7 @@ const ProjectDetail = () => {
 
         setLoading(true);
 
-        const apiUrl = `/api/projects/${projectId}`;
+        const apiUrl = `${API_BASE_URL}/projects/${projectId}`;
 
         const fetchedProject = fetch(apiUrl)
             .then(response => response.json())
