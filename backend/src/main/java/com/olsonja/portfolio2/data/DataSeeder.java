@@ -57,7 +57,7 @@ public class DataSeeder implements CommandLineRunner {
 
             // Populate DB with projects
             try {
-                Resource imageResource = resourceLoader.getResource("classpath:images/project1.jpg");
+                Resource imageResource = resourceLoader.getResource("classpath:data/images/project1.jpg");
 
                 // Convert our image files to byte arrays
                 byte[] image1 = convertImageToByteArray(imageResource);
