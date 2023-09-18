@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar';
 import { Container, Form, Button } from "react-bootstrap";
 import Footer from '../components/Footer';
 import Success from '../components/Success';
-import { API_BASE_URL } from "../../config";
+import { API_BASE_URL } from "../config";
 
 const Contact = () => {
 

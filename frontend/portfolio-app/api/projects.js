@@ -1,6 +1,6 @@
 // Serverless function file for project endpoints
 
-import { API_BASE_URL } from "../config";
+import { API_BASE_URL } from "../src/config";
 
 module.exports = async (req, res) => {
 

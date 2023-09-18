@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Container, Row, Col, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { API_BASE_URL } from "../../config";
+import { API_BASE_URL } from "../config";
 
 const ProjectList = () => {
 
