@@ -15,6 +15,13 @@ const Contact = () => {
         message: ''
     });
 
+    const [errors, setErrors] = useState( {
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: ''
+    });
+
     const [isFormValid, setFormValid] = useState(false);
 
     const [submitted, setSubmitted] = useState(false);
