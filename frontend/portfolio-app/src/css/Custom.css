@@ -76,9 +76,41 @@ body {
 
 
 /* LINKS */
+
 .link {
     color: white;
 }
+
+
+/* INVALID FORM FIELDS */
+
+.invalid-field {
+    border: 2px solid red;
+}
+
+
+/* TOOLTIPS */
+
+.email-tooltip {
+    display: none;
+    position: absolute;
+    right: 120%; /* Adjust as needed */
+    top: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    z-index: 1;
+}
+
+.email-tooltip ul {
+    list-style: none;
+    padding: 0;
+}
+
+.email-tooltip li {
+    margin: 5px 0;
+}
+
 
 /* FOOTER */
 
