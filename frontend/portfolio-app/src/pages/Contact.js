@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import PageHeader from '../components/PageHeader';
 import NavBar from '../components/NavBar';
 import { Container, Form, Button } from "react-bootstrap";
 import Footer from '../components/Footer';
@@ -15,13 +14,6 @@ const Contact = () => {
         message: ''
     });
 
-    const [errors, setErrors] = useState( {
-        firstName: '',
-        lastName: '',
-        email: '',
-        message: ''
-    });
-
     const [isFormValid, setFormValid] = useState(false);
 
     const [submitted, setSubmitted] = useState(false);
@@ -31,19 +23,7 @@ const Contact = () => {
     const handleInputChange = (event) => {
         const { name, value} = event.target;
 
-        if (name === "email" && value.includes("@")) {
-            const enteredDomain = value.split("@")[1].toLowerCase();
-            const isDomainAllowed = allowedDomains.includes(enteredDomain);
-
-            if (!isDomainAllowed) {
-                setFormData({ ...formData, [name]: value, emailError: "Invalid email domain" })
-            }
-        }
-
-        setFormData({ ...formData, [name]: value, emailError: "" });
-
-        const allFieldsFilled = Object.values(formData).every((field) => field.trim() !== '');
-        setFormValid(allFieldsFilled);
+        setFormData({ ...formData, [name]: value});
     };
 
     const handleSubmit = async (event) => {
@@ -80,67 +60,64 @@ const Contact = () => {
     };
 
     useEffect(() => {
-        const emailInput = document.querySelector('input[name="email"]');
-        const emailTooltip = document.getElementById('emailTooltip');
+        const allFieldsFilled = Object.values(formData).every((field) => field.trim() !== '');
 
-        const displayTooltip = () => {
-            emailTooltip.style.display = 'block';
-        };
+        const email = formData.email;
+        const isDomainAllowed = email.includes("@") && allowedDomains.includes(email.split("@")[1].toLowerCase());
 
-        const hideTooltip = (event) => {
-            if (!emailTooltip.contains(event.target) && event.target !== emailInput) {
-                emailTooltip.style.display = 'none';
-            }
-        };
+        setFormValid(allFieldsFilled && isDomainAllowed);
 
-        emailInput.addEventListener('click', displayTooltip);
-        document.addEventListener('click', hideTooltip);
-
-        return () => {
-            emailInput.removeEventListener('click', displayTooltip);
-            document.removeEventListener('click', displayTooltip);
-        };
-    }, []);
+    }, [formData]);
 
 
     return (
         <Container>
-            <PageHeader/>
             <NavBar/>
             {submitted ? (<Success/>) : (
                 <Container fluid className="content-section">
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="formBasicFirstName">
                             <Form.Label>First Name</Form.Label>
-                            <Form.Control type="text" placeholder="Your first name" value={formData.firstName} name="firstName" onChange={handleInputChange}
-                            className={errors.firstName ? "invalid-field" : ""} />
+                            <Form.Control
+                                type="text"
+                                placeholder="Your first name"
+                                value={formData.firstName}
+                                name="firstName"
+                                onChange={handleInputChange}
+                            />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicLastName">
                             <Form.Label>Last Name</Form.Label>
-                            <Form.Control type="text" placeholder="Your last name" value={formData.lastName} name="lastName" onChange={handleInputChange}
-                            className={errors.lastName ? "invalid-field" : ""} />
+                            <Form.Control
+                                type="text"
+                                placeholder="Your last name"
+                                value={formData.lastName}
+                                name="lastName"
+                                onChange={handleInputChange}
+                            />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email Address</Form.Label>
-                            <div className="email-tooltip" id="emailTooltip">
-                                <ul>
-                                    <li>gmail.com</li>
-                                    <li>yahoo.com</li>
-                                    <li>icloud.com</li>
-                                    <li>outlook.com</li>
-                                    <li>aol.com</li>
-                                </ul>
-                            </div>
-                            <Form.Control type="email" placeholder="Enter email" value={formData.email} name="email" onChange={handleInputChange}
-                            className={errors.email ? "invalid-field" : ""} />
+                            <Form.Control
+                                type="email"
+                                placeholder="Must be gmail, yahoo, icloud, outlook, or aol."
+                                value={formData.email}
+                                name="email"
+                                onChange={handleInputChange}
+                            />
                             <Form.Text className="muted">
                                 Your email will never be shared with anyone else.
                             </Form.Text>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicMessage">
                             <Form.Label>Message</Form.Label>
-                            <Form.Control as="textarea" rows={5} value={formData.message} name="message" onChange={handleInputChange}
-                            className={errors.message ? "invalid-field" : ""} />
+                            <Form.Control
+                                as="textarea"
+                                rows={5}
+                                value={formData.message}
+                                name="message"
+                                onChange={handleInputChange}
+                            />
                         </Form.Group>
                         <Button variant="primary" type="submit" disabled={!isFormValid}>
                             Submit

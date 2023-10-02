@@ -2,9 +2,7 @@
 
 package com.olsonja.portfolio2;
 
-import com.olsonja.portfolio2.data.DataSeeder;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import org.apache.log4j.Logger;
 

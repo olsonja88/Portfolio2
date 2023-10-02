@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { useState } from 'react';
-import { Container, Navbar, Nav, Button, Offcanvas } from 'react-bootstrap';
+import { Container, Navbar, Nav, Offcanvas } from 'react-bootstrap';
+import { FaBars } from 'react-icons/fa';
 
 const NavBar = () => {
 
@@ -15,8 +16,8 @@ const NavBar = () => {
     return (
         <Navbar>
             <Container fluid>
-                <Navbar.Brand> </Navbar.Brand>
-                <Button onClick={handleShow}>Navigate</Button>
+                <Navbar.Brand>Johnolson.dev</Navbar.Brand>
+                <FaBars onClick={handleShow} className="bars-icon" />
                 <Offcanvas show={show} onHide={handleClose}>
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title>Navigation</Offcanvas.Title>

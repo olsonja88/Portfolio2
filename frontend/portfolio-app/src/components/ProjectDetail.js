@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 import { API_BASE_URL } from "../config";
 
 const ProjectDetail = () => {
@@ -46,12 +46,17 @@ const ProjectDetail = () => {
             <Row>
                 <Col>
                     <Image fluid src={`data:image/jpeg;base64,${project.base64Image}`}/>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <Button className="mt-3">GitHub Repository</Button>
+                    </a>
                 </Col>
                 <Col>
                     <h1>{project.name}</h1>
                     <p>{project.briefSummary}</p>
                     <p>{project.description}</p>
-                    <Link to={'/portfolio'} className="btn">Portfolio </Link>
+                    <Link to={'/portfolio'}>
+                        <Button>Back to Portfolio</Button>
+                    </Link>
                 </Col>
             </Row>
         </Container>
