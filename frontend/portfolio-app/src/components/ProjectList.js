@@ -1,7 +1,7 @@
 // List of projects, fetched from backend
 
 import { useEffect, useState } from 'react';
-import { Container, Row, Col, Card} from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { API_BASE_URL } from "../config";
 
@@ -35,7 +35,9 @@ const ProjectList = () => {
                     <Card.Img fluid variant="top" src={`data:image/jpeg;base64,${project.base64Image}`} />
                     <Card.Title>{project.name}</Card.Title>
                     <Card.Text>{project.briefSummary}</Card.Text>
-                    <Link to={`/projects/${project.id}`} className="btn">View Details</Link>
+                    <Link to={`/projects/${project.id}`}>
+                        <Button>View Details</Button>
+                    </Link>
                 </Card.Body>
             </Card>
         </Col>

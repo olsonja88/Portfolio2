@@ -1,43 +1,172 @@
 /* Custom CSS for entire project */
 
+:root {
+    --background-color-light: #efefef;
+    --text-color-light: #333333;
+    --highlight-color-light: #e1e1e1;
+    --hover-color-light: #cccccc;
 
-/* WHOLE PAGE */
-
-body {
-    background-color: #3a3a3a;
+    --background-color-dark: #333333;
+    --text-color-dark: #ffffff;
+    --highlight-color-dark: #44444b;
+    --hover-color-dark: #56565d;
 }
 
 
-/* BUTTONS */
+/* LIGHT THEME COLORING*/
 
-.btn {
-    background-color: #3a3a3a;
-    border: none;
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+        color: var(--text-color-light);
+    }
+
+    .content-section {
+        background-color: var(--background-color-light);
+    }
+
+    .navbar {
+        background-color: var(--highlight-color-light);
+    }
+
+    .navbar-brand {
+        color: var(--text-color-light);
+    }
+
+    .bars-icon {}
+    color: var(--text-color-light);
+
+    .bars-icon:hover {
+        background-color: var(--hover-color-light);
+    }
+
+    .nav-link:hover {
+        background-color: var(--hover-color-light);
+    }
+
+    .offcanvas {
+        background-color: var(--highlight-color-light);
+        color: var(--text-color-light);
+    }
+
+    #footer {
+        background-color: var(--highlight-color-light);
+    }
 }
 
-.btn:hover {
-    background-color: black;
-}
 
+/* DARK THEME COLORING */
 
-/* PAGE HEADER */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: var(--text-color-dark);
+    }
 
-.site-title {
-    background-color: ghostwhite;
-    text-align: center;
-    padding: 50px;
+    .content-section {
+        background-color: var(--background-color-dark);
+    }
+
+    .navbar {
+        background-color: var(--highlight-color-dark);
+    }
+
+    .navbar-brand {
+        color: var(--text-color-dark);
+    }
+
+    .bars-icon {}
+    color: var(--text-color-dark);
+
+    .bars-icon:hover {
+        background-color: var(--hover-color-dark);
+    }
+
+    .nav-link:hover {
+        background-color: var(--hover-color-dark);
+    }
+
+    .offcanvas {
+        background-color: var(--highlight-color-dark);
+        color: var(--text-color-dark);
+    }
+
+    .form-control {
+        background-color: var(--highlight-color-dark);
+        color: var(--text-color-dark);
+        border-color: black;
+    }
+
+    .form-control::placeholder {
+        color: var(--text-color-dark);
+    }
+
+    .form-control:focus {
+        background-color: var(--hover-color-dark);
+        color: var(--text-color-dark);
+        border-color: black;
+    }
+
+    .btn {
+        background-color: var(--highlight-color-dark);
+        border-color: black;
+    }
+
+    .btn:hover {
+        background-color: var(--hover-color-dark);
+        border-color: black;
+    }
+
+    .btn:disabled {
+        background-color: var(--highlight-color-dark);
+        border-color: black;
+    }
+
+    .card {
+        background-color: var(--highlight-color-dark);
+        color: var(--text-color-dark);
+    }
+
+    .link {
+        background-color: var(--hover-color-dark);
+    }
+
+    .accordion-button {
+        background-color: var(--highlight-color-dark);
+        color: var(--text-color-dark);
+        border-color: black;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: var(--highlight-color-dark);
+        color: var(--text-color-dark);
+        border-color: black;
+    }
+
+    .accordion-body {
+        background-color: var(--highlight-color-dark);
+    }
+
+    .list-group-item {
+        background-color: var(--highlight-color-dark);
+        color: var(--text-color-dark);
+    }
+
+    #footer {
+        background-color: var(--highlight-color-dark);
+    }
 }
 
 
 /* NAVBAR & OFF-CANVAS */
 
 .navbar {
-    background-color: grey;
     padding: 10px;
 }
 
 .navbar-brand {
     font-size: 2em;
+    font-weight: bold;
 }
 
 .nav-item {
@@ -45,78 +174,31 @@ body {
 }
 
 .nav-link {
-    color: black;
     font-size: 1.5em;
     padding: 20px;
 }
 
 .nav-link:hover {
-    background-color: grey;
-    color: ghostwhite;
     border-radius: 5px 5px;
 }
 
-.offcanvas {
-    background-color: ghostwhite;
-}
-
-.offcanvas-header {
-    background-color: grey;
+.bars-icon {
+    font-size: 1.5em;
 }
 
 
 /* CONTENT SECTIONS */
 
 .content-section {
-    background-color: ghostwhite;
     text-align: center;
     font-size: 1.5em;
     padding: 50px;
 }
 
 
-/* LINKS */
-
-.link {
-    color: white;
-}
-
-
-/* INVALID FORM FIELDS */
-
-.invalid-field {
-    border: 2px solid red;
-}
-
-
-/* TOOLTIPS */
-
-.email-tooltip {
-    display: none;
-    position: absolute;
-    right: 120%; /* Adjust as needed */
-    top: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 5px;
-    z-index: 1;
-}
-
-.email-tooltip ul {
-    list-style: none;
-    padding: 0;
-}
-
-.email-tooltip li {
-    margin: 5px 0;
-}
-
-
 /* FOOTER */
 
 #footer {
-    background-color: grey;
-    color: ghostwhite;
     text-align: center;
     padding: 10px;
     font-size: 1.2em;

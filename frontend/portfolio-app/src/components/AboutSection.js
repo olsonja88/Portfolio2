@@ -14,7 +14,7 @@ const AboutSection = () => {
                     <Image roundedCircle src={ProfilePic} fluid/>
                     <p className="mt-5">Computer Science Student at Metropolitan State University, interested in Full Stack Web Development.</p>
                     {/* List of classes taken */}
-                    <Accordion>
+                    <Accordion className="custom-accordion">
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>
                                 Relevant Completed Courses
