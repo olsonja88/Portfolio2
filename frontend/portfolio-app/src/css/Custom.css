@@ -10,6 +10,7 @@
     --text-color-dark: #ffffff;
     --highlight-color-dark: #44444b;
     --hover-color-dark: #56565d;
+    --fill-color-dark: #282828;
 }
 
 
@@ -59,7 +60,7 @@
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: black;
+        background-color: var(--fill-color-dark);
         color: var(--text-color-dark);
     }
 
@@ -106,6 +107,10 @@
         background-color: var(--hover-color-dark);
         color: var(--text-color-dark);
         border-color: black;
+    }
+
+    .muted {
+        color: var(--text-color-dark);
     }
 
     .btn {
@@ -204,4 +209,5 @@
     text-align: center;
     padding: 10px;
     font-size: 1.2em;
+    box-shadow: 0 3px 7px #000000;
 }
