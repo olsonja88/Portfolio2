@@ -74,8 +74,11 @@
 /* DARK THEME COLORING */
 
 @media (prefers-color-scheme: dark) {
-    body {
+    html {
         background-color: var(--fill-color-dark);
+    }
+
+    body {
         color: var(--text-color-dark);
     }
 
