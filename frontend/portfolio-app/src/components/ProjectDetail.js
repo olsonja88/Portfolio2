@@ -51,8 +51,7 @@ const ProjectDetail = () => {
                     </a>
                 </Col>
                 <Col>
-                    <h1>{project.name}</h1>
-                    <p>{project.briefSummary}</p>
+                    <h2>{project.briefSummary}</h2>
                     <p>{project.description}</p>
                     <Link to={'/portfolio'}>
                         <Button>Back to Portfolio</Button>

@@ -50,43 +50,41 @@ public class DataSeeder implements CommandLineRunner {
 
     public void run(String... args) {
 
-        if (projectRepository.count() == 0) {
 
-            // Populate DB with projects
-            try {
-                Resource imageResource = resourceLoader.getResource("classpath:data/images/project1.jpg");
+        // Populate DB with projects
+        try {
+            Resource imageResource = resourceLoader.getResource("classpath:data/images/project1.jpg");
 
-                if (imageResource.exists()) {
-                    System.out.println("Resource URL: " + imageResource.getURL());
+            if (imageResource.exists()) {
+                System.out.println("Resource URL: " + imageResource.getURL());
 
-                    // Convert our image files to byte arrays
-                    byte[] image1 = convertImageToByteArray(imageResource);
+                // Convert our image files to byte arrays
+                byte[] image1 = convertImageToByteArray(imageResource);
 
-                    if (image1 == null) {
-                        System.out.println("*** ONE OR MORE OF THE IMAGES PROVIDED IS NULL UPON BYTE ARRAY CONVERSION. ***");
-                        logger.error("*** ONE OR MORE OF THE IMAGES PROVIDED IS NULL UPON BYTE ARRAY CONVERSION. ***");
-                    } else {
-                        // Convert image byte arrays to base64Images
-                        String base64Image1 = Base64.getEncoder().encodeToString(image1);
-
-                        // Create sample projects
-                        Project project1 = new Project("Johnolson.dev", "A Java Web Dev Project", "A personal portfolio website made using a Spring Boot API, React frontend, and PostgreSQL remote database.","https://github.com/olsonja88/Portfolio2.git", base64Image1);
-
-                        // Save projects to the repository
-                        projectRepository.saveAll(Arrays.asList(project1));
-
-                        // Print projects to the console
-                        projectRepository.findAll().forEach(System.out::println);
-                    }
+                if (image1 == null) {
+                    System.out.println("*** ONE OR MORE OF THE IMAGES PROVIDED IS NULL UPON BYTE ARRAY CONVERSION. ***");
+                    logger.error("*** ONE OR MORE OF THE IMAGES PROVIDED IS NULL UPON BYTE ARRAY CONVERSION. ***");
                 } else {
-                    System.out.println("*** IMAGE RESOURCE NOT FOUND ***");
-                    logger.error("*** IMAGE RESOURCE NOT FOUND ***");
-                }
+                    // Convert image byte arrays to base64Images
+                    String base64Image1 = Base64.getEncoder().encodeToString(image1);
 
-            } catch (Exception e) {
-                System.out.println("*** AN EXCEPTION HAS OCCURRED ***:" + e);
-                logger.error("An exception has occurred: " + e);
+                    // Create sample projects
+                    Project project1 = new Project("Johnolson.dev", "A Java Web Dev Project", "A personal portfolio website made using a Spring Boot API, React frontend, and PostgreSQL remote database.","https://github.com/olsonja88/Portfolio2.git", base64Image1);
+
+                    // Save projects to the repository
+                    projectRepository.saveAll(Arrays.asList(project1));
+
+                    // Print projects to the console
+                    projectRepository.findAll().forEach(System.out::println);
+                }
+            } else {
+                System.out.println("*** IMAGE RESOURCE NOT FOUND ***");
+                logger.error("*** IMAGE RESOURCE NOT FOUND ***");
             }
+
+        } catch (Exception e) {
+            System.out.println("*** AN EXCEPTION HAS OCCURRED ***:" + e);
+            logger.error("An exception has occurred: " + e);
         }
     }
 }

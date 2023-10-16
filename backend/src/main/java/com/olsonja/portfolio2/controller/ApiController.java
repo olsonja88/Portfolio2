@@ -23,7 +23,7 @@ public class ApiController {
 
     // Constructor
     @Autowired
-    public ApiController(ProjectService projectService, EmailService emailService) {
+    public ApiController(ProjectService projectService) {
         this.projectService = projectService;
         this.emailService = emailService;
     }

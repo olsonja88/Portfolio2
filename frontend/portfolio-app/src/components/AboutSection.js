@@ -3,6 +3,7 @@
 import React from 'react';
 import { Container, Row, Col, Image, Accordion, ListGroup } from 'react-bootstrap';
 import ProfilePic from "../assets/NewProfilePic2.jpg";
+import {FaGithub, FaLinkedin} from "react-icons/fa";
 
 const AboutSection = () => {
     return (
@@ -30,6 +31,12 @@ const AboutSection = () => {
                             </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>
+                    <a href="https://github.com/olsonja88" target="_blank" rel="noopener noreferrer">
+                        <FaGithub className="socials-icon" />
+                    </a>
+                    <a  href="https://www.linkedin.com/in/john-olson-036096276/" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin className="socials-icon" />
+                    </a>
                 </Col>
                 <Col></Col>
             </Row>
