@@ -14,8 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-// @CrossOrigin(origins = {"https://portfolio2-ten-kohl.vercel.app", "https://johnolson.dev"})
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"https://portfolio2-ten-kohl.vercel.app", "https://johnolson.dev"})
 public class ApiController {
 
     // Instance Variables
@@ -26,7 +25,7 @@ public class ApiController {
     @Autowired
     public ApiController(ProjectService projectService) {
         this.projectService = projectService;
-        //this.emailService = emailService;
+        this.emailService = emailService;
     }
 
 
@@ -59,12 +58,12 @@ public class ApiController {
 
 
     // Handle requests for Emails
-//    @PostMapping("/send-email")
-//    public ResponseEntity<String> sendEmail(@RequestBody EmailRequest emailRequest) {
-//
-//        emailService.sendEmail(emailRequest);
-//
-//        return ResponseEntity.ok("Email sent successfully");
-//    }
+    @PostMapping("/send-email")
+    public ResponseEntity<String> sendEmail(@RequestBody EmailRequest emailRequest) {
+
+        emailService.sendEmail(emailRequest);
+
+        return ResponseEntity.ok("Email sent successfully");
+    }
 
 }
